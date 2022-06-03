@@ -11,10 +11,10 @@ const Header = () => {
     <header className="header">
         <img src={logo} className="header_logo" alt="" />
         <ul className="header_list">
-            <li className="header_list_name">Accueil</li>
-            <li className="header_list_name">Profil</li>
-            <li className="header_list_name">Réglages</li>
-            <li className="header_list_name">Communauté</li>
+          <li className="header_list_name">Accueil</li>
+          <li className="header_list_name">Profil</li>
+          <li className="header_list_name">Réglages</li>
+          <li className="header_list_name">Communauté</li>
         </ul>
     </header>
   );
