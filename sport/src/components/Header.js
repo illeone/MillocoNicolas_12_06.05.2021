@@ -12,7 +12,7 @@ const Header = () => {
     <header className="header">
         <img src={logo} className="header_logo" alt="" />
         <ul className="header_list">
-          <NavLink to="/" style={{ textDecoration: 'none' }}> <li className="header_list_name">Accueil</li></NavLink>
+          <NavLink to="/" style={{ textDecoration: "none" }}> <li className="header_list_name">Accueil</li></NavLink>
           <li className="header_list_name">Profil</li>
           <li className="header_list_name">Réglages</li>
           <li className="header_list_name">Communauté</li>

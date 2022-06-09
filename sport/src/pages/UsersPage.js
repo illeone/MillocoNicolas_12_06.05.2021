@@ -5,15 +5,15 @@ const UsersPage = () => {
     return (
         <>
         <div className="">
-            <div className="">
-                <NavLink to="/user/:id">
-                    <button className="">12</button> 
+            <nav className="aze">
+                <NavLink to="/user/:id" className="link" style={{ textDecoration: 'none' }}>
+                    <div className="btn">12</div> 
                 </NavLink>
                 
-                <NavLink to="/user/:id" >
-                    <button className="">18</button>
+                <NavLink to="/user/:id" className="link" style={{ textDecoration: 'none' }}>
+                    <div className="btn btn2">18</div>
                 </NavLink>
-            </div>
+            </nav>
         </div>
 
         </>

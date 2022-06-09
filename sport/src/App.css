@@ -46,6 +46,11 @@ main{
   list-style-type:none;
   cursor:pointer;
   font-size:24px;
+  transition: 0.3;
+}
+.header_list_name:hover{
+  transition: 0.3;
+  color: red;
 }
 .header{
   background-color:#020203
@@ -94,4 +99,30 @@ main{
 .lateral{
   width:117px;
   height:876px;
+}
+
+
+
+.aze{
+  display: flex;
+  margin: 9rem;
+  padding: 0;
+}
+
+.btn {  
+  padding: 1.5rem;
+  font-size: 3rem;
+  color: red; 
+  cursor: pointer;
+  border-radius: 20rem;
+  border:  solid 3px black;
+  transition: 0.5s;
+}
+.btn:hover{
+ background: #000;
+ transition: 0.3s;
+}
+.link{
+  margin-left: 13rem;
+  border-radius: 20rem;
 }
