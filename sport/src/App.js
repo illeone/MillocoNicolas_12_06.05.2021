@@ -11,13 +11,13 @@ function App() {
         <div>
           <Router>
             <Header />
-            <main>
-              <LateralBar />
-                <Routes>
-                  <Route path="/" element={<UsersPage/>} />
-                  <Route path="/user/:id" element={<Dashboard />} />  
-                </Routes> 
-            </main>  
+              <main>
+                <LateralBar />
+                  <Routes>
+                    <Route path="/" element={<UsersPage/>} />
+                    <Route path="/user/:id" element={<Dashboard />} />  
+                  </Routes> 
+              </main>  
           </Router>
         </div>
         
