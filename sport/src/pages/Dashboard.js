@@ -18,10 +18,7 @@ const Dashboard = () => {
 
     return (
         <>
-
-        {/* <Header />
-        <LateralBar /> */}
-
+        
         <div className="">
             <div className="">
                 <span className="">Bonjour <span className="">Thomas</span></span>
