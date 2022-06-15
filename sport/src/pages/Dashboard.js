@@ -1,29 +1,46 @@
-// import Header from "../components/Header";
-// import LateralBar from "../components/LateralBar";
-// import axios from 'axios';
+import Header from "../components/Header";
+import LateralBar from "../components/LateralBar";
+import axios from 'axios';
+import { useState,useEffect } from 'react';
+import { useParams } from 'react-router';
+import Users from '../components/Users';
+import { userInfos } from '../service/data.js';
 
-// import React, { useEffect } from "react";
+import Average from "../components/Average";
 
 
 
-const Dashboard = () => {
 
 
-    // useEffect(() => {
-    //     axios
-    //     .get("src/data/data.js")
-    //     .then((res) => console.log(res.data))
-    // }
-    // , []) 
+
+
+function Dashboard() {
+    const {id} = useParams();
+    const [data, setData] = useState([]);
+        
+    useEffect(() => {
+            const getData = async () => {
+                const res = await userInfos(id);
+                setData(res.data);
+            };
+            getData();
+        }, [id]);
+        if (data.length === 0) return null;
+
+        console.log(data)
 
     return (
         <>
         
         <div className="">
+            
             <div className="">
-                <span className="">Bonjour <span className="">Thomas</span></span>
-                <p className="">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+            
+            {data && <Users className="" name={data.userInfos.firstName}/>}
+
             </div>
+            <Average />
+
         </div>
 
         </>
