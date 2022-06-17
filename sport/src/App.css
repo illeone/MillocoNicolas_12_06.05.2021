@@ -126,3 +126,13 @@ main{
   margin-left: 13rem;
   border-radius: 20rem;
 }
+
+
+
+
+
+.info_list_desc{
+  display:flex;
+  flex-direction:column;
+}
+
