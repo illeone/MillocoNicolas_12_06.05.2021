@@ -1,12 +1,16 @@
-import Header from "../components/Header";
-import LateralBar from "../components/LateralBar";
-import axios from 'axios';
-import { useState,useEffect } from 'react';
 import { useParams } from 'react-router';
-import Users from '../components/Users';
-import { userInfos } from '../service/data.js';
+import { useState,useEffect } from 'react';
+import { userInfos } from '../utils/data.js';
 
-import Average from "../components/Average";
+import Users from '../components/Users';
+import InfoList from '../components/InfoList';
+
+import calorie from '../assets/calorie.svg'
+import protein from '../assets/protein.svg'
+import carb from '../assets/carb.svg'
+import lipid from '../assets/lipid.svg'
+
+
 
 
 
@@ -34,12 +38,17 @@ function Dashboard() {
         
         <div className="">
             
-            <div className="">
-            
-            {data && <Users className="" name={data.userInfos.firstName}/>}
-
+            <div className="">           
+                {data && <Users className="" name={data.userInfos.firstName}/>}
             </div>
-            <Average />
+
+            <aside>
+                {data && <InfoList icon={calorie} info={data.keyData.calorieCount} value="kCal" title="Calories" />}
+                {data && <InfoList icon={protein} info={data.keyData.proteinCount} value="g" title="Proteines" />}
+                {data && <InfoList icon={carb} info={data.keyData.carbohydrateCount} value="g" title="Glucides" />}
+                {data && <InfoList icon={lipid} info={data.keyData.lipidCount} value="g" title="Lipides" />} 
+            </aside>
+            
 
         </div>
 
