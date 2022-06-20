@@ -20,13 +20,15 @@ function Dashboard() {
     const userInfos = useApi(`../${id}/users.json`);
     const activity = useApi(`../${id}/activity.json`);
 
-    if (!userInfos || !activity) {
-        return <p> chargement</p>
-            
+    if (userInfos === null || activity === null) {
+        console.log("chargement");
+        return <p> chargement</p>      
     }
 
+    // if (userInfos.length === 0) return null;
 
-    console.log(userInfos);
+
+    console.log(userInfos.data.firstName);
     console.log(activity);
 
     // const [data, setData] = useState([]);
@@ -49,17 +51,17 @@ function Dashboard() {
         <div className="">
             
             <div className="">           
-                {userInfos && <Users className="" name={userInfos.firstName}/>}
-                {userInfos && <Score data={userInfos} />}
+                {userInfos && <Users className="" name={userInfos.data.userInfos.firstName}/>}
+                {userInfos && <Score data={userInfos.data} />}
             </div>
 
             <aside>
-                {userInfos && <InfoList icon={calorie} info={userInfos.keyData.calorieCount} value="kCal" title="Calories" />}
-                {userInfos && <InfoList icon={protein} info={userInfos.keyData.proteinCount} value="g" title="Proteines" />}
-                {userInfos && <InfoList icon={carb} info={userInfos.keyData.carbohydrateCount} value="g" title="Glucides" />}
-                {userInfos && <InfoList icon={lipid} info={userInfos.keyData.lipidCount} value="g" title="Lipides" />} 
+                {userInfos && <InfoList icon={calorie} info={userInfos.data.keyData.calorieCount} value="kCal" title="Calories" />}
+                {userInfos && <InfoList icon={protein} info={userInfos.data.keyData.proteinCount} value="g" title="Proteines" />}
+                {userInfos && <InfoList icon={carb} info={userInfos.data.keyData.carbohydrateCount} value="g" title="Glucides" />}
+                {userInfos && <InfoList icon={lipid} info={userInfos.data.keyData.lipidCount} value="g" title="Lipides" />} 
             </aside>
-            {userInfos && <Activity data={activity} />}
+            {userInfos && <Activity data={activity.data.sessions} />}
             
 
         </div>
