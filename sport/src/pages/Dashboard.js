@@ -2,8 +2,9 @@ import { useParams } from 'react-router';
 import useApi from '../utils/useApi.js';
 
 import Users from '../components/Users';
-import InfoList from '../components/InfoList';
 import Score from '../components/Score';
+import InfoList from '../components/InfoList';
+import Activity from '../components/Activity';
 
 import calorie from '../assets/calorie.svg'
 import protein from '../assets/protein.svg'
@@ -58,7 +59,9 @@ function Dashboard() {
                 {userInfos && <InfoList icon={carb} info={userInfos.keyData.carbohydrateCount} value="g" title="Glucides" />}
                 {userInfos && <InfoList icon={lipid} info={userInfos.keyData.lipidCount} value="g" title="Lipides" />} 
             </aside>
-        
+            {userInfos && <Activity data={activity} />}
+            
+
         </div>
 
         </>
