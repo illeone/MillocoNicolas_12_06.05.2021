@@ -1,5 +1,3 @@
-// import Header from './components/Header';
-// import LateralBar from './components/LateralBar';
 import Dashboard from './pages/Dashboard';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from './components/Header';
