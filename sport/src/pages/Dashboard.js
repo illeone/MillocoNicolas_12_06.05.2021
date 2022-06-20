@@ -3,6 +3,7 @@ import useApi from '../utils/useApi.js';
 
 import Users from '../components/Users';
 import InfoList from '../components/InfoList';
+import Score from '../components/Score';
 
 import calorie from '../assets/calorie.svg'
 import protein from '../assets/protein.svg'
@@ -48,6 +49,7 @@ function Dashboard() {
             
             <div className="">           
                 {userInfos && <Users className="" name={userInfos.firstName}/>}
+                {userInfos && <Score data={userInfos} />}
             </div>
 
             <aside>
