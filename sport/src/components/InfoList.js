@@ -6,7 +6,8 @@ function InfoList({icon,info,value,title}) {
             <span>{info}{value}</span>
             <span>{title}</span>
         </div>
-    </> );
+    </> 
+    );
 }
 
 export default InfoList;
