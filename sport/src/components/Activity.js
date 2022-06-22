@@ -1,4 +1,4 @@
-import {BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip,Legend} from "recharts";
+import {BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip} from "recharts";
 
 function CustomToolTip({active, payload}) {
     if (active){
@@ -23,29 +23,29 @@ function Activity({data}) {
     
     return (  
         <div className="activity">
-            {/* <div>
+            <div className="activity_title">
                 <h3>Activité quotidienne</h3>
-                <div>
-					<div>
-					
-						<p>Poids (kg)</p>
+                <div className="activity_legend">
+					<div className="activity_legend_info">
+                        <p className="activity_legend_kg_circle"></p>				
+						<p className="activity_legend_text">Poids (kg)</p>
 					</div>
-					<div>
-
-						<p>Calories brûlées (kCal)</p>
+					<div className="activity_legend_info">
+                        <p className="activity_legend_kcal_circle"></p>
+						<p className="activity_legend_text">Calories brûlées (kCal)</p>
 					</div>
 				</div>
-            </div> */}
-            <BarChart data={data} width={730} height={300} barGap={8}>
+            </div>
+            <BarChart data={data} width={700} height={250} barGap={8}>
                 <CartesianGrid horizontal="true" vertical="" strokeDasharray="3 3" />
-                <XAxis tickFormatter={numberAxis} tickLine={false} axisLine={false}  tick={{fontSize: 12}} padding={{ left: -40, right: -40 }}/>
-                <YAxis dataKey="kilogram" orientation="right" yAxisId="right" tickLine={false} axisLine={false} tickCount={3} domain={['dataMin-1']}  />
+                <XAxis tickFormatter={numberAxis} tickLine={false} axisLine={true} dy={10}  tick={{fontSize: 12,}} padding={{ left: -37, right: -37 }}/>
+                <YAxis dataKey="kilogram" orientation="right" yAxisId="right" tickLine={false} axisLine={false} dx={30} tickCount={3} domain={['dataMin-1']}  />
                 <YAxis hide={true} yAxisId="left"   />
                 <Tooltip content={CustomToolTip}/>
                 <Bar dataKey="kilogram" yAxisId="right" fill="#282D30" barSize={9} radius={[50, 50, 0, 0]} />
                 <Bar dataKey="calories" yAxisId="left" fill="#E60000" barSize={9} radius={[50, 50, 0, 0]} />
                 {/* <Bar dataKey="day" fill="#E60000" barSize={9} radius={[50, 50, 0, 0]} /> */}
-                <Legend /> 
+                {/* <Legend />  */}
             </BarChart>
         </div>
     );
