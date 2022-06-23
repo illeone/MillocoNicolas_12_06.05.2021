@@ -263,3 +263,15 @@ main{
   font-size: 10px;
   text-align: center;
 }
+
+
+.average{
+  position: relative;
+	width: 258px;
+	height: 263px;
+	background: #ff0000;
+	border-radius: 5px;
+}
+.average_title{
+  color: white;
+}
