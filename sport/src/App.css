@@ -211,7 +211,7 @@ main{
 .score_infos{
   position: absolute;
   width: 25%;
-  top:15px;
+  top:30px;
   text-align: center;
 }
 .score_pourcentage{
