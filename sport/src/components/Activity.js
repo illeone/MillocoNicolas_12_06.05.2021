@@ -36,7 +36,7 @@ function Activity({data}) {
 					</div>
 				</div>
             </div>
-            <BarChart data={data} width={700} height={250} barGap={8}>
+            <BarChart data={data} width={700} height={210} barGap={8}>
                 <CartesianGrid horizontal="true" vertical="" strokeDasharray="3 3" />
                 <XAxis tickFormatter={numberAxis} tickLine={false} axisLine={true} dy={10}  tick={{fontSize: 12,}} padding={{ left: -37, right: -37 }}/>
                 <YAxis dataKey="kilogram" orientation="right" yAxisId="right" tickLine={false} axisLine={false} dx={30} tickCount={3} domain={['dataMin-1']}  />

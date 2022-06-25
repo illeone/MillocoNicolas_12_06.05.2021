@@ -8,13 +8,13 @@ function Average ({data}) {
       <h3 className="average_title">Durée moyenne des sessions</h3>
         <LineChart
             width={258}
-            height={250} 
+            height={305} 
             data={data}
             margin={{
-                top: 5, 
-                right: 30,
-                left: 20,
-                bottom: 5 
+                top: 32, 
+                right: 20,
+                left: 16,
+                bottom: 10, 
             }}
         >
             <CartesianGrid
@@ -27,7 +27,7 @@ function Average ({data}) {
             axisLine={false}
             tickLine={false}
             mirror={true}
-            tick={{fill:'rgba(255, 255, 255, 0.504)'}}
+            tick={{fill:'#f9b7b7'}}
 
 
             />
@@ -45,11 +45,10 @@ function Average ({data}) {
             />
 
             <Line
-            type="monotone"
+            type="natural"
             dataKey="sessionLength"
             strokeWidth={3}
-            fill="#FFFFFF"
-            stroke="#FFFFFF"         
+            stroke="#f9b7b7"         
             dot={false}
             activeDot={{ stroke: '#FFFFFF33', strokeWidth: 10, r: 5 }}
             //   activeDot={<CustomActiveDot />}

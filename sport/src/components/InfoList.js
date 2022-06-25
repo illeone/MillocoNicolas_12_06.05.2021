@@ -1,12 +1,12 @@
 function InfoList({icon,info,value,title}) {
     return (  
-    <>
+    <div className="info_list">
         <img src={icon} alt="infos liste icons"/>
         <div className="info_list_desc">
-            <span>{info}{value}</span>
-            <span>{title}</span>
+            <span className="info_list_value">{info}{value}</span>
+            <span className="info_list_title">{title}</span>
         </div>
-    </> 
+    </div>
     );
 }
 

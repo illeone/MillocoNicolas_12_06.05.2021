@@ -34,27 +34,25 @@ function Dashboard() {
     return (
         <>
         
-            <div className="">
+            <div className="main">
                 
-                <div className="">           
+                
+                <div className="graphics">           
                     {userInfos && <Users className="" name={userInfos.data.userInfos.firstName}/>}
-                    {userInfos && <Score today={userInfos.data.todayScore} />}
+                    {activity && <Activity data={activity.data.sessions} />}
+                    <div className="small_graphics">
+                        {average && <Average data={average.data.sessions} />}
+                        {performance && <Performance data={performance.data} />}
+                        {userInfos && <Score today={userInfos.data.todayScore} />}
+                    </div>
                 </div>
 
-                <aside>
+                <aside className="aside">
                     {userInfos && <InfoList icon={calorie} info={userInfos.data.keyData.calorieCount} value="kCal" title="Calories" />}
                     {userInfos && <InfoList icon={protein} info={userInfos.data.keyData.proteinCount} value="g" title="Proteines" />}
                     {userInfos && <InfoList icon={carb} info={userInfos.data.keyData.carbohydrateCount} value="g" title="Glucides" />}
                     {userInfos && <InfoList icon={lipid} info={userInfos.data.keyData.lipidCount} value="g" title="Lipides" />} 
                 </aside>
-                {activity && <Activity data={activity.data.sessions} />}
-                <div>
-                    {average && <Average data={average.data.sessions} />}
-                </div>
-                <div>
-                    {performance && <Performance data={performance.data} />}
-                </div>
-                
 
             </div>
 

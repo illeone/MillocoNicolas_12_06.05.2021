@@ -2,11 +2,11 @@ import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 
 
-function Score({data}) {
+function Score({today}) {
     
     const data01 = [
-        { value: data.todayScore },
-        { value: 1 - data.todayScore }, 
+        { value: today },
+        { value: 1 - today }, 
     ];
     
     return (

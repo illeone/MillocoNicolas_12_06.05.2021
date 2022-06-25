@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 
 const useApi = (url) => {
-	console.log("useApi")
+	// console.log("useApi")
 	const [data, setData] = useState(null);
         
     useEffect(() => {
