@@ -299,6 +299,8 @@ main{
 }
 
 
+
+
 .average{
   position: relative;
 	background: #ff0000;
@@ -314,6 +316,15 @@ main{
 }
 .recharts-surface{
   margin-top: 1rem;
+}
+
+.tool_tip_average{
+  padding: 1px 10px;
+  background: white;
+  margin: auto;
+}
+.tool_tip_average_min{
+  font-size: 10px;
 }
 
 
