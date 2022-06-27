@@ -22,7 +22,7 @@ function Dashboard() {
     const average = useApi(`../${id}/average.json`);
     const performance = useApi(`../${id}/performance.json`);
 
-    if (userInfos === null || activity === null) {
+    if (userInfos === null || activity === null || average === null || performance === null) {
         // console.log("chargement");
         return <p>chargement...</p>      
     }
@@ -42,7 +42,7 @@ function Dashboard() {
                     {activity && <Activity data={activity.data.sessions} />}
                     <div className="small_graphics">
                         {average && <Average data={average.data.sessions} />}
-                        {performance && <Performance data={performance.data} />}
+                        {performance && <Performance data={performance.data.data} name={performance.data.kind} />}
                         {userInfos && <Score today={userInfos.data.todayScore} />}
                     </div>
                 </div>
