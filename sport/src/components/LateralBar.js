@@ -13,7 +13,7 @@ const LateralBar = () => {
                 <img className="lateral_img" src={yoga} alt="" />
               </li>
               <li className="lateral_icon">
-                <img className="lateral_img" src={swim} alt="" />
+                <img className="lateral_img swim" src={swim} alt="" />
               </li>
               <li className="lateral_icon">
                 <img className="lateral_img" src={bike} alt="" />
