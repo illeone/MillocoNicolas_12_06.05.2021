@@ -16,24 +16,29 @@ function Performance ({data}) {
         <>
             <div className='performance'>
                 <RadarChart 
-                    cx={300}
-                    cy={250}
-                    outerRadius={150}
-                    width={500}
-                    height={500}
-                    data={data}
-                >
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="kind" tickFormatter={physicalQualities}  />
-                    <Radar 
-                        dataKey="value"
-                        stroke="#8884d8"
-                        fill="#8884d8"
-                        fillOpacity={0.6}
-                    />
-                </RadarChart> 
+                    className="radar-chart"
+                    cx={130}
+                    cy={185}
+                    outerRadius="75%"
+                    width={258}
+                    height={290}
+                    data={data}>
+                        <PolarGrid gridType="polygon" />
+                        <PolarAngleAxis	
+                            dataKey="kind" 
+                            tickFormatter={physicalQualities}  
+                            stroke='white' 
+                            tickLine={false} 
+                            axisLine={false}  
+                            tick={{ fontSize: 10 }}/>
+                        <Radar
+                            dataKey='value' 
+                            stroke='#FF0101'	
+                            fill='#FF0101' 
+                            fillOpacity={0.7}
+                             />
+                    </RadarChart>    
             </div>
-            {/* <div className="">{data.kind[1]} </div> */}
         </>
     )
 }

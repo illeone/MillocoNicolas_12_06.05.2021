@@ -13,7 +13,7 @@ function Score({today}) {
         <div className="score">        
             <h1 className='score_title'>Score</h1>
             <div className='score_circle'>
-                <PieChart width={258} height={263}>       
+                <PieChart width={258} height={248}>       
                     <Pie 
                     data={data01}
                     dataKey="value"
@@ -33,7 +33,7 @@ function Score({today}) {
                         ))}
                     </Pie>
 
-                 <circle cx="130" cy="133" r="70" fill="#ffffff" />                     
+                 <circle cx="130" cy="133" r="78" fill="#ffffff" />                     
                 </PieChart>  
 
                 <div className="score_infos">

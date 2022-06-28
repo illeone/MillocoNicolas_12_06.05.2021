@@ -31,13 +31,13 @@ function Average ({data}) {
       <h3 className="average_title">Durée moyenne des sessions</h3>
         <LineChart
             width={258}
-            height={305} 
+            height={320} 
             data={data}
             margin={{
-                top: 32, 
+                top: 48, 
                 right: 20,
                 left: 16,
-                bottom: 10, 
+                bottom: 0, 
             }}
         >
             <CartesianGrid
@@ -58,7 +58,7 @@ function Average ({data}) {
             <YAxis
             width={5}
             tickCount={false}
-            domain={["dataMin-28", 'dataMax + 50']}
+            domain={["dataMin-38", 'dataMax + 50']}
             />
 
             <Tooltip 

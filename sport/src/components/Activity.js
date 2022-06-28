@@ -36,10 +36,10 @@ function Activity({data}) {
 					</div>
 				</div>
             </div>
-            <BarChart data={data} width={700} height={210} barGap={8}>
+            <BarChart data={data} width={800} height={210} barGap={8}>
                 <CartesianGrid horizontal="true" vertical="" strokeDasharray="3 3" />
-                <XAxis tickFormatter={numberAxis} tickLine={false} axisLine={true} stroke="#9B9EAC" dy={10}  tick={{fontSize: 12,}} padding={{ left: -37, right: -37 }}/>
-                <YAxis dataKey="kilogram" orientation="right" yAxisId="right" stroke="#9B9EAC" tickLine={false} axisLine={false} dx={30} tickCount={3} domain={['dataMin-1']}  />
+                <XAxis tickFormatter={numberAxis} tickLine={false} axisLine={true} stroke="#9B9EAC" dy={10}  tick={{fontSize: 12,}} padding={{ left: -45, right: -46 }}/>
+                <YAxis dataKey="kilogram" orientation="right" yAxisId="right" stroke="#9B9EAC" tickLine={false} axisLine={false} dx={40} tickCount={3} domain={['dataMin-1']}  />
                 <YAxis hide={true} yAxisId="left"   />
                 <Tooltip content={CustomToolTip}  />
                 <Bar dataKey="kilogram" yAxisId="right" fill="#282D30" barSize={9} radius={[50, 50, 0, 0]} />
