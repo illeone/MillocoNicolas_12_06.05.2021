@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import LateralBar from './components/LateralBar';
 import UsersPage from './pages/UsersPage';
+import Error404 from './pages/Error404';
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
                 <LateralBar />
                   <Routes>
                     <Route path="/" element={<UsersPage/>} />
-                    <Route path="/user/:id" element={<Dashboard />} />  
-                  </Routes> 
-              </main>  
+                    <Route path="/user/:id" element={<Dashboard />} /> 
+                    <Route path="*" element={<Error404 />} /> 
+                  </Routes>  
+              </main>            
           </Router>
         </div>
         
