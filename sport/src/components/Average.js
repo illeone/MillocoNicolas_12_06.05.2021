@@ -39,6 +39,17 @@ function Average ({data}) {
                 left: 16,
                 bottom: 0, 
             }}
+            onMouseMove={(e) => {
+              if (e.isTooltipActive === true) {
+                let div = document.querySelector('.average')
+                let windowWidth = div.clientWidth
+                let mouseXpercentage = Math.round(
+                  (e.activeCoordinate.x / windowWidth) * 100
+                )
+                // @ts-ignore
+                div.style.background = `linear-gradient(90deg, rgba(255,0,0,1.5) ${mouseXpercentage}%, rgba(220,0,0,1.5) ${mouseXpercentage}%`
+              }
+            }}
         >
             <CartesianGrid
             vertical={false}
@@ -63,8 +74,15 @@ function Average ({data}) {
 
             <Tooltip 
             content={<CustomToolTip active={true} payload={data} />}
-            cursor={{ stroke: 'rgba(0, 0, 0, 0.1)', strokeWidth: 40, }}
+            cursor={{ stroke: 'none'}}
             />
+            {/* <defs>
+              <linearGradient id="colorLine" x1="0%" y1="0" x2="100%" y2="0">
+                <stop offset="0%" stopColor="green" />
+                <stop offset={`${0}%`} stopColor="yellow" />
+                <stop offset={`${100}%`} stopColor="black" />
+              </linearGradient>
+            </defs> */}
 
             <Line
             type="natural"
