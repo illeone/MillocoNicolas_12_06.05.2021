@@ -12,9 +12,13 @@ import calorie from '../assets/calorie.svg'
 import protein from '../assets/protein.svg'
 import carb from '../assets/carb.svg'
 import lipid from '../assets/lipid.svg'
+// import Error404 from './Error404.js';
 
 
-
+/**
+ * Display the dashboard
+ * @returns {JSX}
+ */
 function Dashboard() {
     const {id} = useParams();
     const userInfos = useApi(`../${id}/users.json`);
@@ -26,10 +30,12 @@ function Dashboard() {
         // console.log("chargement");
         return <p>chargement...</p>      
     }
+
     // console.log(userInfos.data)
 
     // console.log(userInfos.data.userInfos.firstName);
     // console.log(activity);
+
 
     return (
         <>
@@ -49,7 +55,7 @@ function Dashboard() {
 
                 <aside className="aside">
                     {userInfos && <InfoList icon={calorie} info={userInfos.data.keyData.calorieCount} value="kCal" title="Calories" />}
-                    {userInfos && <InfoList icon={protein} info={userInfos.data.keyData.proteinCount} value="g" title="Proteines" />}
+                    {userInfos && <InfoList className="iconListProt" icon={protein} info={userInfos.data.keyData.proteinCount} value="g" title="Protéines" />}
                     {userInfos && <InfoList icon={carb} info={userInfos.data.keyData.carbohydrateCount} value="g" title="Glucides" />}
                     {userInfos && <InfoList icon={lipid} info={userInfos.data.keyData.lipidCount} value="g" title="Lipides" />} 
                 </aside>

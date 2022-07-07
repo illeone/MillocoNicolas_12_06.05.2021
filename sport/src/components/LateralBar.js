@@ -3,6 +3,10 @@ import swim from '../assets/swim.svg';
 import bike from '../assets/bike.svg';
 import alters from '../assets/alters.svg';
 
+/**
+ * create left sidebar with icons
+ * @returns {JSX}
+ */
 const LateralBar = () => {
     return (
       <>
