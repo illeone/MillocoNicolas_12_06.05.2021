@@ -1,7 +1,16 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
+import PropTypes from 'prop-types';
 
+/**
+ * Render a LineChart with user average sessions Data
+ * @return {JSX}
+ */
 function Average ({data}) {
 
+    /**
+    * @param {number} value
+    * @return {string} corresponding to first letter of weekdays
+    */
     function weekDays(day) {
         if (day === 1) return 'L'
         if (day === 2) return 'M'
@@ -12,7 +21,11 @@ function Average ({data}) {
         if (day === 7) return 'D'
         return day
       }
-
+    
+    /**
+    * @param {boolean} active
+    * @param {array} payload
+    */  
     function CustomToolTip({ active, payload }) {
         if (active) {
           return (
@@ -95,6 +108,10 @@ function Average ({data}) {
         </LineChart>
     </div>
     )
+}
+
+Average.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default Average

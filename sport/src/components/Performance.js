@@ -1,7 +1,17 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
+import PropTypes from 'prop-types';
 
+
+/**
+ * Render a RadarChart with user performance data
+ * @return {JSX}
+ */
 function Performance ({data}) {
 
+    /**
+    * @param {number} qualities
+    * @return {string} corresponding to the traduction in french qualities
+    */
     function physicalQualities(qualities) {
         if (qualities === 1) return 'Intensité'
         if (qualities === 2) return 'Vitesse'
@@ -10,7 +20,7 @@ function Performance ({data}) {
         if (qualities === 5) return 'Énergie'
         if (qualities === 6) return 'cardio'
         return qualities
-      }
+    }
 
     return(
         <>
@@ -43,6 +53,42 @@ function Performance ({data}) {
     )
 }
 
+Performance.propTypes = {
+    data: PropTypes.array.isRequired,
+}
+
+
+export default Performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Performance.propTypes = {
+//     performanceData: PropTypes.array,
+//   }
+
 // function Performance() {
 //     const data = [
 //       { value: 80, kind: 1 },
@@ -74,5 +120,3 @@ function Performance ({data}) {
 //       </RadarChart>
 //     );
 //   }
-
-export default Performance

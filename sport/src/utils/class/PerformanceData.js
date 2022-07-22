@@ -2,12 +2,12 @@
 class PerformanceData {
     /**
      * User Performance Data
-     * @param {*} userId 
-     * @param {*} kind 
-     * @param {*} data 
+     * @param {number} userId 
+     * @param {object} kind 
+     * @param {array} data 
      */
     constructor(userId, kind, data) {
-        this.id = userId
+        this.userId = userId
         this.kind = kind
         this.data = data
     }

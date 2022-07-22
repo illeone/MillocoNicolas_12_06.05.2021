@@ -1,5 +1,10 @@
 import {BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip} from "recharts";
+import PropTypes from 'prop-types';
 
+/**
+* @param {boolean} active
+* @param {array} payload
+*/ 
 function CustomToolTip({active, payload}) {
     if (active){
         return (
@@ -14,11 +19,17 @@ function CustomToolTip({active, payload}) {
     }
 }
 
+/**
+* @param {number} number
+*/
 function numberAxis(number) {
     return number + 1
   }
 
-
+/**
+ * Render a BarChart with user activity Data
+ * @return {JSX}
+ */
 function Activity({data}) {
     
     return (  
@@ -49,6 +60,15 @@ function Activity({data}) {
             </BarChart>
         </div>
     );
+}
+
+CustomToolTip.propTypes = {
+    active: PropTypes.bool.isRequired,
+	payload: PropTypes.array.isRequired,
+}
+
+Activity.propTypes = {
+    data: PropTypes.array.isRequired,
 }
 
 export default Activity;

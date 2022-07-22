@@ -1,12 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 
-
 /**
- * Création de la barre de navigation
+ * create the navigation bar
  * @returns {JSX}
+ * @NavLink is used to navigate to the users page
  */
-
 const Header = () => {
   return (
     <header className="header">

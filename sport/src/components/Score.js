@@ -1,7 +1,11 @@
 import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
+import PropTypes from 'prop-types';
 
-
+/** create a PieChart with score value
+* @param  {number} today
+* @return {JSX}  
+*/
 function Score({today}) {
     
     const data01 = [
@@ -46,5 +50,9 @@ function Score({today}) {
         </div>
       );
 }
+
+Score.propTypes = {
+    today: PropTypes.number.isRequired,
+  }
 
 export default Score;

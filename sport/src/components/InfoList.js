@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
  * @param {string} title
  * @returns {JSX}
  */
-
 function InfoList({icon,info,value,title}) {
 
     return (  
@@ -25,8 +24,8 @@ function InfoList({icon,info,value,title}) {
 export default InfoList;
 
 InfoList.prototype = {
-    icon: PropTypes.string,
-    info: PropTypes.number,
-    value: PropTypes.string,
-    title: PropTypes.string,
-  };
+    icon: PropTypes.string.isRequired,
+    info: PropTypes.number.isRequired,
+    value: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+};
