@@ -1,19 +1,19 @@
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
 import useApi from '../utils/useApi.js';
 
-import Users from '../components/Users';
-import Score from '../components/Score';
-import InfoList from '../components/InfoList';
-import Activity from '../components/Activity';
-import Average from '../components/Average.js';
-import Performance from '../components/Performance.js';
+// import Users from '../components/Users';
+// import Score from '../components/Score';
+// import InfoList from '../components/InfoList';
+// import Activity from '../components/Activity';
+// import Average from '../components/Average.js';
+// import Performance from '../components/Performance.js';
 
-import calorie from '../assets/calorie.svg'
-import protein from '../assets/protein.svg'
-import carb from '../assets/carb.svg'
-import lipid from '../assets/lipid.svg'
-// import Error404 from './Error404.js';
-
+// import calorie from '../assets/calorie.svg'
+// import protein from '../assets/protein.svg'
+// import carb from '../assets/carb.svg'
+// import lipid from '../assets/lipid.svg'
+import Json from '../components/Json.js';
 
 /**
  * Display the dashboard
@@ -21,44 +21,55 @@ import lipid from '../assets/lipid.svg'
  */
 function Dashboard() {
     const {id} = useParams();
-    const userInfos = useApi(`../${id}/users.json`);
-    const activity = useApi(`../${id}/activity.json`);
-    const average = useApi(`../${id}/average.json`);
-    const performance = useApi(`../${id}/performance.json`);
+    const [btnType, setBtnType] = useState(true);
+
+        const userInfos = useApi(`http://localhost:3000/user/${id}`);
+        const activity = useApi(`http://localhost:3000/user/${id}/activity`);
+        const average = useApi(`http://localhost:3000/user/${id}/average-sessions`);
+        const performance = useApi(`http://localhost:3000/user/${id}/performance`);
+
+    
+        const userInfos1 = useApi(`../${id}/users.json`);
+        const activity1 = useApi(`../${id}/activity.json`);
+        const average1 = useApi(`../${id}/average-sessions.json`);
+        const performance1 = useApi(`../${id}/performance.json`);
+
+
 
     if (userInfos === null || activity === null || average === null || performance === null) {
-        // console.log("chargement");
-        return <p>chargement...</p>      
-    }
-
-    // console.log(userInfos.data)
-
-    // console.log(userInfos.data.userInfos.firstName);
-    // console.log(activity);
-
+        return <p>chargement...</p>  
+    }	
 
     return (
         <>
-        
             <div className="main">
-                
-                
-                <div className="graphics">           
-                    {userInfos && <Users className="" name={userInfos.data.userInfos.firstName}/>}
-                    {activity && <Activity data={activity.data.sessions} />}
-                    <div className="small_graphics">
-                        {average && <Average data={average.data.sessions} />}
-                        {performance && <Performance data={performance.data.data} name={performance.data.kind} />}
-                        {userInfos && <Score today={userInfos.data.todayScore} />}
-                    </div>
-                </div>
+                             
+                {btnType ?
+                <Json  type={btnType} userInfos={userInfos} activity={activity} average={average} performance={performance}/>
+                : <Json  type={btnType} userInfos={userInfos1} activity={activity1} average={average1} performance={performance1}/>}
+              
+                <div>
+                    {/* <label className="button-switch">
+                        
+                        <button 
+                        // type="checkbox"
+                        onClick={() => setBtnType(!btnType)}>
+                            { btnType ? "API" : "JSON"}                            
+                        </button>
+                        <i></i>
+                    </label> */}
 
-                <aside className="aside">
-                    {userInfos && <InfoList icon={calorie} info={userInfos.data.keyData.calorieCount} value="kCal" title="Calories" />}
-                    {userInfos && <InfoList className="iconListProt" icon={protein} info={userInfos.data.keyData.proteinCount} value="g" title="Protéines" />}
-                    {userInfos && <InfoList icon={carb} info={userInfos.data.keyData.carbohydrateCount} value="g" title="Glucides" />}
-                    {userInfos && <InfoList icon={lipid} info={userInfos.data.keyData.lipidCount} value="g" title="Lipides" />} 
-                </aside>
+                    <label className="button-switch">
+                        <input 
+                            type="checkbox"
+                            value={btnType}
+                            onClick={() => setBtnType(!btnType)}>                       
+                        </input>
+                        <i className="btn_switch"></i>
+                        <span className='json'>json</span>
+                        <span className='api'>api</span>
+                    </label>
+                </div>
 
             </div>
 
