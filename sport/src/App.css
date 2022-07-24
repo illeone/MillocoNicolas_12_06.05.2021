@@ -130,25 +130,66 @@ main{
   display: flex;
   margin: 9rem;
   padding: 0;
+  position: absolute;
 }
 
 .btn {  
   padding: 1.5rem;
   font-size: 3rem;
-  color: red; 
+  color: black; 
+  background-color: white;
   cursor: pointer;
-  border-radius: 20rem;
-  border:  solid 3px black;
-  transition: 0.5s;
+  border-radius: 3.5rem;
+  border: solid 2px black;
+  transition: 0.6s;
 }
 .btn:hover{
  background: #000;
- transition: 0.3s;
+ color: red;
+ border-radius: 2.3rem;
+ transition: 0.6s;
+ animation: jiggle 0.25s infinite;
+ /* animation: shake 0.90s cubic-bezier(.36,.07,.19,.97) infinite; */
+ animation-delay: 2.5s;
 }
+
 .link{
   margin-left: 13rem;
   border-radius: 20rem;
 }
+
+@keyframes jiggle {
+  0% { 
+      transform: rotate(-4deg);
+      animation-timing-function: ease-in;
+}
+  50% {
+      transform: rotate(4.5deg);
+      animation-timing-function: ease-out;
+}
+}
+.name-kc{
+  position: relative;
+  font-size: 1px;
+  bottom:3rem;
+  z-index: -2;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  transition: 0.6s;
+}
+.link:hover .name-kc{
+  font-size: larger;
+  z-index:-2;
+  color: black;
+  transform: translateY(33px);
+  transition: 0.6s;
+}
+
+
+
+
+
 
 .hello{
   font-size: 42px;
@@ -511,27 +552,33 @@ main{
   -webkit-text-fill-color: transparent;
 }
 
+.container-btns{
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
 .btns{
   display: inline-flex;
   margin: 60px 0;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-left: 3rem;
   overflow: hidden;
   z-index: 1;
-  border: 2px solid #FF0002;
+  border: 2px solid black;
   padding: 10px 25px;
   border-radius: 25px;
   transition: all 0.8s ease;
   text-decoration: none;
-  color: #FF0002;
+  color: black;
   font-weight: 600;
   text-transform: uppercase;
 }
 .btns:hover{
-  color: black;
+  color: #FF0002;
   transition: .8s;
-  box-shadow: rgba(0, 0, 0, 0.10) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 1px, rgba(0, 0, 0, 0.17) 0px 4px 2px, rgba(0, 0, 0, 0.16) 0px 8px 4px, rgba(0, 0, 0, 0.15) 0px 16px 8px, rgba(0, 0, 0, 0.14) 0px 32px 16px;
 }
 
 .btns::before {
@@ -550,13 +597,105 @@ main{
 .btns:hover::before {
   transform: scale(208);
   color: black;
-  background: #FF0002;
+  background: black;
   transition: .8s;
 }
 
 .btns:active{
-  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+  box-shadow: rgba(255, 0, 0, 0.4) 0px 5px, rgba(255, 0, 0, 0.3) 0px 10px, rgba(238, 17, 98, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
+
+
+
+
+
+
+
+
+
+.button-switch {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: -2rem;
+  margin-top: 1.5rem;
+  /* -webkit-tap-highlight-color: transparent; */
+}
+.button-switch i {
+  position: relative;
+  display: inline-block;
+  margin-right: .4rem;
+  width: 48px;
+  height: 26px;
+  background-color: #b7b7b7;
+  border-radius: 23px;
+  vertical-align: text-bottom;
+  transition: all 0.3s linear;
+}
+.button-switch i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 44px;
+  height: 22px;
+  background-color: rgb(231, 229, 229);
+  border-radius: 11px;
+  transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+  transition: all 0.25s linear;
+}
+.button-switch i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 11px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+  transform: translate3d(2px, 2px, 0);
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+}
+.button-switch i:hover::after {
+  left:1.5px;
+}
+.button-switch input:checked + i:hover::after {
+  left:-1.5px;
+  }
+.button-switch:active i::after {
+  width: 28px;
+  transform: translate3d(2px, 2px, 0);
+}
+.button-switch:active input:checked + i::after { transform: translate3d(16px, 2px, 0); }
+.button-switch input { display: none; }
+.button-switch input:checked + i { background-color: #FF0002; }
+.button-switch input:checked + i::before { transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0); }
+.button-switch input:checked + i::after { transform: translate3d(24px, 2px, 0);}
+
+
+.json{
+  position: absolute;
+  left:76.9rem;
+  margin-top: 9px;
+  z-index: 1;
+  font-size: 6px;
+  font-weight: 600;
+  color: white;
+}
+.api{
+  position: absolute;
+  left:78.3rem;
+  margin-top: 9px;
+  z-index: 1;
+  font-size: 7px;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
 
 
 
