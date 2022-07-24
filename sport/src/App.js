@@ -10,14 +10,14 @@ function App() {
         <div>
           <Router>
             <Header />
-              <main>
-                <LateralBar />
-                  <Routes>
-                    <Route path="/" element={<UsersPage/>} />
-                    <Route path="/user/:id" element={<Dashboard />} /> 
-                    <Route path="*" element={<Error404 />} /> 
-                  </Routes>  
-              </main>            
+                <main>
+                  <LateralBar />
+                    <Routes>
+                      <Route path="/" element={<UsersPage/>} />
+                      <Route path="/user/:id" element={<Dashboard />} /> 
+                      <Route path="*" element={<Error404 />} /> 
+                    </Routes>  
+                </main>           
           </Router>
         </div>
         
