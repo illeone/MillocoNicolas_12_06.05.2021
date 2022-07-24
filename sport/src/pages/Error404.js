@@ -1,5 +1,10 @@
 import { NavLink } from "react-router-dom";
 
+/**
+ * Display the page Error404
+ * @returns {JSX}
+ * @NavLink is used to navigate to the UsersPage
+ */
 const Error404 = () => {
     return (
          <div className="content">
@@ -9,7 +14,10 @@ const Error404 = () => {
             <h4 className="oups" >
                Oups ! La page que vous demandez n'existe pas.
             </h4>
-            <NavLink to="/" className="btns">retour accueil</NavLink>
+            <div className="container-btns">
+               <NavLink to="/" className="btns">retour accueil</NavLink>
+            </div>
+
          </div>
     )
 }
