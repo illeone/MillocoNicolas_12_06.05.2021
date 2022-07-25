@@ -6,7 +6,9 @@ import { NavLink } from "react-router-dom";
  * @NavLink is used to navigate to the UsersPage
  */
 const Error404 = () => {
+   
     return (
+
          <div className="content">
             <h2 className="linear-wipe" data-text="404">
                404
@@ -19,6 +21,7 @@ const Error404 = () => {
             </div>
 
          </div>
+
     )
 }
 

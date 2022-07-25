@@ -9,16 +9,17 @@ const UsersPage = () => {
 
     return (
         <>
-        <div className="">
-            <nav className="aze">
+        
+        <div>
+            <nav className="users_page">
                 <NavLink to="/user/12" className="link" style={{ textDecoration: 'none' }}>
                     <div className="btn">12</div> 
-                    <p className="name-kc">Karl</p>
+                    <p className="name_kc">Karl</p>
                 </NavLink>
                 
                 <NavLink to="/user/18" className="link" style={{ textDecoration: 'none' }}>
                     <div className="btn btn2">18</div>
-                    <p className="name-kc">Cecilia</p>
+                    <p className="name_kc">Cecilia</p>
                 </NavLink>
             </nav>
         </div>

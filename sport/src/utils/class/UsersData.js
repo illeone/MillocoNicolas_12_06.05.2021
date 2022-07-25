@@ -1,10 +1,10 @@
-    /**
-     * User Data
-     * @param {number} id 
-     * @param {object} userInfos 
-     * @param {number} todayScore 
-     * @param {object} KeyData 
-     */
+/**
+* User Data
+* @param {number} id 
+* @param {object} userInfos 
+* @param {number} todayScore 
+* @param {object} KeyData 
+*/
 class UsersData{
     constructor(id, userInfos, todayScore, score, keyData ) {
         this.id = id;

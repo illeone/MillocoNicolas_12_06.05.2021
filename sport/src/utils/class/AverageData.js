@@ -1,8 +1,8 @@
-    /**
-     * User Average Data
-     * @param {number} userId 
-     * @param {array} sessions 
-     */
+/**
+* User Average Data
+* @param {number} userId 
+* @param {array} sessions 
+*/
 class AverageData{
     constructor(userId, sessions) {
         this.userId = userId

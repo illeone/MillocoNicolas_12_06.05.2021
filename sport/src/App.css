@@ -9,13 +9,6 @@ main{
   column-gap:2rem
 }
 
-/* .header_horizontal{
-  background-color: black;
-}
-
-.header_list_name{
-  color: white;
-} */
 
 
 .header{
@@ -63,6 +56,8 @@ main{
   background-color:#020203
 }
 
+/* ################### Lateral Bar ################### */
+
 .header_icons{
   display:flex;
   flex-direction:column;
@@ -71,7 +66,6 @@ main{
   padding:0;
   margin-top: 2rem;
 }
-
 .lateral_icon{
   cursor:pointer;
   align-self:center;
@@ -124,9 +118,9 @@ main{
   height:876px;
 }
 
+/* ################### Users Page ################### */
 
-
-.aze{
+.users_page{
   display: flex;
   margin: 9rem;
   padding: 0;
@@ -143,13 +137,13 @@ main{
   border: solid 2px black;
   transition: 0.6s;
 }
+
 .btn:hover{
  background: #000;
  color: red;
  border-radius: 2.3rem;
  transition: 0.6s;
  animation: jiggle 0.25s infinite;
- /* animation: shake 0.90s cubic-bezier(.36,.07,.19,.97) infinite; */
  animation-delay: 2.5s;
 }
 
@@ -168,7 +162,7 @@ main{
       animation-timing-function: ease-out;
 }
 }
-.name-kc{
+.name_kc{
   position: relative;
   font-size: 1px;
   bottom:3rem;
@@ -178,7 +172,7 @@ main{
   text-align: center;
   transition: 0.6s;
 }
-.link:hover .name-kc{
+.link:hover .name_kc{
   font-size: larger;
   z-index:-2;
   color: black;
@@ -186,10 +180,7 @@ main{
   transition: 0.6s;
 }
 
-
-
-
-
+/* ################### Welcome Users ################### */
 
 .hello{
   font-size: 42px;
@@ -201,6 +192,7 @@ main{
   font-size: 20px;
 }
 
+/* ################### Main Components Flex ################### */
 
 .main{
   display: flex;
@@ -209,6 +201,7 @@ main{
   display: flex;
 }
 
+/* ################### Infos List ################### */
 
 .aside{
   margin-top: 11.2rem;
@@ -262,11 +255,7 @@ main{
   margin-left:25px;
   transition: .7s;
 }
-/* .info_list:hover .info_list_desc{
-  left:1rem;
-  transform:scale(1.05);
-  transition: .7s;
-} */
+
 .info_list_value{
   font-weight: bold;
   font-size: 18px;
@@ -294,10 +283,7 @@ main{
   margin-left: 15px;
  }
 
-
-
-
-
+/* ################### Score Graphic ################### */
 
 .score{
   position: relative;
@@ -330,7 +316,6 @@ main{
   top: 50px;
 }
 
-
 .score_infos{
   position: absolute;
   width: 25%;
@@ -348,9 +333,7 @@ main{
   color: #6e6e6e;
 }
 
-
-
-
+/* ################### Activity Graphic ################### */
 
 .activity{
   margin-top: 3rem;
@@ -397,10 +380,6 @@ main{
 }
 
 
-
-
-
-
 .tool_tip{
   background-color: red;
   color: white;
@@ -422,8 +401,7 @@ main{
   text-align: center;
 }
 
-
-
+/* ################### Average Graphic ################### */
 
 .average{
   position: relative;
@@ -449,15 +427,7 @@ main{
   font-size: 10px;
 }
 
-
-
-/* .performance{
-
-	background: #282D30;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
-	border-radius: 5px;
-    margin-top: 7rem;
-} */
+/* ################### Performance Graphic ################### */
 
 .performance{
   background-color:#282D30;
@@ -469,21 +439,7 @@ main{
   margin-left: 3rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ################### Error 404 Page ################### */
 
 .content{
   margin: 0 auto;
@@ -606,11 +562,7 @@ main{
 }
 
 
-
-
-
-
-
+/* ################### Button Switch ################### */
 
 
 .button-switch {
@@ -689,15 +641,3 @@ main{
   font-size: 7px;
   font-weight: 600;
 }
-
-
-
-
-
-
-
-
-
-
-
-

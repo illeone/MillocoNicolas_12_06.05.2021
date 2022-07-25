@@ -16,20 +16,20 @@ const Json = ({type, userInfos, activity, average, performance}) => {
     return (
         <>    
                 <div className="graphics">           
-                    {userInfos && <Users className="" name={userInfos?.userInfos?.firstName}/>}
-                    {activity && <Activity data={activity?.sessions} />}
+                    {userInfos && <Users className="" name={userInfos.userInfos.firstName}/>}
+                    {activity && <Activity data={activity.sessions} />}
                     <div className="small_graphics">
-                        {average && <Average data={average?.sessions} />}
-                        {performance && <Performance data={performance?.data} name={performance?.kind} />}
-                        {userInfos && <Score today={userInfos?.todayScore || userInfos?.score}  />}
+                        {average && <Average data={average.sessions} />}
+                        {performance && <Performance data={performance.data} name={performance.kind} />}
+                        {userInfos && <Score today={userInfos.todayScore || userInfos.score}  />}
                     </div>
                 </div>
 
                 <aside className="aside">
-                    {userInfos && <InfoList icon={calorie} info={userInfos?.keyData?.calorieCount} value="kCal" title="Calories" />}
-                    {userInfos && <InfoList className="iconListProt" icon={protein} info={userInfos?.keyData?.proteinCount} value="g" title="Protéines" />}
-                    {userInfos && <InfoList icon={carb} info={userInfos?.keyData?.carbohydrateCount} value="g" title="Glucides" />}
-                    {userInfos && <InfoList icon={lipid} info={userInfos?.keyData?.lipidCount} value="g" title="Lipides" />} 
+                    {userInfos && <InfoList icon={calorie} info={userInfos.keyData.calorieCount} value="kCal" title="Calories" />}
+                    {userInfos && <InfoList className="iconListProt" icon={protein} info={userInfos.keyData.proteinCount} value="g" title="Protéines" />}
+                    {userInfos && <InfoList icon={carb} info={userInfos.keyData.carbohydrateCount} value="g" title="Glucides" />}
+                    {userInfos && <InfoList icon={lipid} info={userInfos.keyData.lipidCount} value="g" title="Lipides" />} 
                 </aside>
         </>
     )
