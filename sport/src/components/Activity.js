@@ -11,7 +11,6 @@ function CustomToolTip({active, payload}) {
             <div className="tool_tip">
                 <div className="tool_tip_kg">{payload[0].value}kg</div>
                 <div className="tool_tip_kcal">{payload[1].value}Kcal</div>
-                {/* <div className="">{payload[2].value}day</div> */}
             </div>      
         );        
     } else {

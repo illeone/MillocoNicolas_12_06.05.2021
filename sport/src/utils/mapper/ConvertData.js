@@ -4,7 +4,7 @@ import PerformanceData from "../class/PerformanceData";
 import UsersData from "../class/UsersData";
 
 function ConvertData (result, url) {
-    // console.log(result, url);
+    // console.log(result, url);    
 
     if (url.includes("average-sessions")) {
         return new AverageData(

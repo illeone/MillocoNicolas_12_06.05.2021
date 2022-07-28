@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import React, { useState } from "react";
 import useApi from '../utils/useApi.js';
 
-import Json from '../components/Json.js';
+import Graphics from '../components/Graphics.js';
 
 /**
  * Display the dashboard
@@ -31,8 +31,8 @@ function Dashboard() {
             <div className="main">
                              
                 {btnType ?
-                <Json  type={btnType} userInfos={userInfos} activity={activity} average={average} performance={performance}/>
-                : <Json  type={btnType} userInfos={userInfos1} activity={activity1} average={average1} performance={performance1}/>}
+                <Graphics  type={btnType} userInfos={userInfos} activity={activity} average={average} performance={performance}/>
+                : <Graphics  type={btnType} userInfos={userInfos1} activity={activity1} average={average1} performance={performance1}/>}
               
                 <div>
                     <label className="button-switch">

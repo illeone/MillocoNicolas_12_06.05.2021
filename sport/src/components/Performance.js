@@ -1,7 +1,6 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 import PropTypes from 'prop-types';
 
-
 /**
  * Render a RadarChart with user performance data
  * @return {JSX}
@@ -59,64 +58,3 @@ Performance.propTypes = {
 
 
 export default Performance
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Performance.propTypes = {
-//     performanceData: PropTypes.array,
-//   }
-
-// function Performance() {
-//     const data = [
-//       { value: 80, kind: 1 },
-//       { value: 120, kind: 2 },
-//       { value: 140, kind: 3 },
-//       { value: 50, kind: 4 },
-//       { value: 200, kind: 5 },
-//       { value: 90, kind: 6 },
-//     ];
-  
-//     return (
-//       <RadarChart
-//         cx={300}
-//         cy={250}
-//         outerRadius={150}
-//         width={500}
-//         height={500}
-//         data={data}
-//       >
-//         <PolarGrid />
-//         <PolarAngleAxis dataKey="kind" />
-//         <Radar
-//           name="Mike"
-//           dataKey="value"
-//           stroke="#8884d8"
-//           fill="#8884d8"
-//           fillOpacity={0.6}
-//         />
-//       </RadarChart>
-//     );
-//   }

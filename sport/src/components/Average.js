@@ -59,7 +59,6 @@ function Average ({data}) {
                 let mouseXpercentage = Math.round(
                   (e.activeCoordinate.x / windowWidth) * 100
                 )
-                // @ts-ignore
                 div.style.background = `linear-gradient(90deg, rgba(255,0,0,1.5) ${mouseXpercentage}%, rgba(220,0,0,1.5) ${mouseXpercentage}%`
               }
             }}
@@ -89,13 +88,6 @@ function Average ({data}) {
             content={<CustomToolTip active={true} payload={data} />}
             cursor={{ stroke: 'none'}}
             />
-            {/* <defs>
-              <linearGradient id="colorLine" x1="0%" y1="0" x2="100%" y2="0">
-                <stop offset="0%" stopColor="green" />
-                <stop offset={`${0}%`} stopColor="yellow" />
-                <stop offset={`${100}%`} stopColor="black" />
-              </linearGradient>
-            </defs> */}
 
             <Line
             type="natural"
